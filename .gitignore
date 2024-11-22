@@ -67,3 +67,21 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+
+# Ignore all environment files (except templates).
+/.env*
+!/.env*.erb
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+*.log
+*.tmp
+*.swp
+.DS_Store
