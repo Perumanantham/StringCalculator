@@ -16,6 +16,10 @@ RSpec.describe StringCalculator do
 
     it 'raises an exception for negative numbers' do
       expect { StringCalculator.add("1,-2,3") }.to raise_error("negative numbers not allowed: -2")
-    end    
+    end
+
+    it 'returns the sum of multiple numbers' do
+      expect(StringCalculator.add("1,2,3,4,5")).to eq(15)
+    end
   end
 end
