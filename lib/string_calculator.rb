@@ -17,9 +17,16 @@ class StringCalculator
     # Check for negative numbers
     negatives = nums.select { |n| n.negative? }
   
-    raise "negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
+    # raise "negative numbers not allowed: #{negatives.join(', ')}" if negatives.any?
+    raise NegativeNumberError.new(negatives) if negatives.any?
   
     # Return the sum of all numbers
     nums.sum
+  end
+end
+
+class NegativeNumberError < StandardError
+  def initialize(negatives)
+    super("negative numbers not allowed: #{negatives.join(', ')}")
   end
 end
